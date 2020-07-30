@@ -11,7 +11,7 @@ public class SmUaLoginTest {
     public void userCanPressLoginButton() {
         open("https://sushi-master.ua/");
         $(".backdrop-close").click();//Закрыть "Хочешь получать...)
-        $(".header-enter").$(".header-enter__login").click();
+        $(".header-enter").$(".header-enter__login").click();//Нажать кнопку вход
     }
 
 }
