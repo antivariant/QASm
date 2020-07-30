@@ -17,7 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="sm-testing" target="1.7" />
+      <module name="sm-testing" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="Encoding">
