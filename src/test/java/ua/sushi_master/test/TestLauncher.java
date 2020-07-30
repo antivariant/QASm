@@ -31,7 +31,7 @@ public class TestLauncher {
         for (Object run : (JSONArray) client.sendGet("get_runs/2&is_completed=0")) {
             String run_id = ((JSONObject) run).get("id").toString();
             //Runs-Tests (только Untested, Retest и Fail)
-            for (Object test : (JSONArray) client.sendGet("get_tests/" + run_id + "&status_id=3,4,5")) {
+            for (Object test : (JSONArray) client.sendGet("get_tests/" + run_id + "&status_id=3,4,5")) { //TODO перенести в константы, посмотреть класс com.gurock.testrail.APIClient
                 //Определяем Case
                 String case_id = ((JSONObject) test).get("case_id").toString();
                 String test_id = ((JSONObject) test).get("id").toString();
@@ -53,13 +53,13 @@ public class TestLauncher {
                     Result result = JUnitCore.runClasses(testClass);
 
                     //Записываем результаты в кейс
-                    Map data = new HashMap();
+                    Map<String,String> data = new HashMap<String,String>();
                     if (result.getFailures().size() == 0) {
-                        data.put("status_id", 1); //Тест прошел
+                        data.put("status_id", "1"); //Тест прошел
                         client.sendPost("add_result_for_case/" + run_id + "/" + case_id, data);
                     } else { //Тест не прошел
                         for (Failure failure : result.getFailures()) {
-                            data.put("status_id", 5);
+                            data.put("status_id", "5");
                             data.put("comment", "Test " + ((JSONObject) test).get("id") + " Case " + case_id + " Fails: " + failure.toString());
                             client.sendPost("add_result_for_case/" + run_id + "/" + case_id, data);
                         }
