@@ -196,7 +196,7 @@
       <module fileurl="file://$PROJECT_DIR$/sm-testing.iml" filepath="$PROJECT_DIR$/sm-testing.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="14" project-jdk-type="JavaSDK" />
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
       <option name="id" value="central" />
