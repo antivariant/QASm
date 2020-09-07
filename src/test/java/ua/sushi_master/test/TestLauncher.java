@@ -29,8 +29,9 @@ public class TestLauncher {
         //TODO окружить все обращения к TestRail трай-кетчами
         //Все проекты
         for (Object project : (JSONArray)client.sendGet("get_projects")) {
+            String project_id = (((JSONObject) project).get("id")).toString();
             //Все незавершенные Runs
-            for (Object run : (JSONArray) client.sendGet("get_runs/" + (((JSONObject) project).get("id")).toString() + "&is_completed=0")) { //TODO проходиться по всем проектам
+            for (Object run : (JSONArray) client.sendGet("get_runs/" + project_id + "&is_completed=0")) { //TODO проходиться по всем проектам
                 String run_id = ((JSONObject) run).get("id").toString();
                 //Runs-Tests (только Untested, Retest и Fail)
                 for (Object test : (JSONArray) client.sendGet("get_tests/" + run_id + "&status_id=" + TestRailConst.UNTESTED + ", " + TestRailConst.RETEST + ", " + TestRailConst.FAILED)) {
