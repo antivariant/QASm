@@ -11,10 +11,12 @@ public class TestRailConst {
 
     }
     //status_id
-    public final static String PASSED = "1";
-    public final static String BLOCKED = "2";
-    public final static String UNTESTED = "3";
-    public final static String RETEST = "4";
-    public final static String FAILED = "5";
+    public final static String STATUS_PASSED = "1";
+    public final static String STATUS_BLOCKED = "2";
+    public final static String STATUS_UNTESTED = "3";
+    public final static String STATUS_RETEST = "4";
+    public final static String STATUS_FAILED = "5";
+
+    public final static String TEST_TYPE_AUTOMATED = "2";
 
 }
