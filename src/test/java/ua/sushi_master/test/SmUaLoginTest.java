@@ -25,6 +25,8 @@ public class SmUaLoginTest {
 
     @Before
     public void beforeTestOpenSite(){
+        Configuration.browser = "chrome";
+        //Configuration.downloadsFolder = "";
         open("https://sushi-master.ua/");
     }
 
